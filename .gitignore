@@ -1,0 +1,9 @@
+﻿# --- Common junk ---
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+Thumbs.db
+.env
+# ---- Raw dataset (do not commit) ----
+home-credit-default-risk/*
+!home-credit-default-risk/README.md
