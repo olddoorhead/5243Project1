@@ -4,6 +4,10 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .env
-# ---- Raw dataset (do not commit) ----
+# ----Do not commit ----
 home-credit-default-risk/*
 !home-credit-default-risk/README.md
+AGENTS.md
+Project 1.pdf
+.cursor
+Project_1.ipynb
