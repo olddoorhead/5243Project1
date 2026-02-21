@@ -116,7 +116,7 @@ Key outcomes:
 
 ## Team and Contribution Statement
 
-Team 6 members:
+Team 4 members:
 - `Zhewei Deng` (`zd2372@columbia.edu`)
 - `Xiying Chen` (`xc2781@columbia.edu`)
 - `Kexuan Liu` (`kl3745@columbia.edu`)
