@@ -1,0 +1,251 @@
+@page {
+  size: A4;
+  margin: 6mm 12mm 6mm 12mm;
+}
+
+:root {
+  --text: #13203a;
+  --muted: #4b5973;
+  --line: #cfd7e3;
+  --heading: #0f2d66;
+  --accent-bg: #eef3ff;
+  --table-head: #dbe7ff;
+}
+
+html,
+body {
+  background: #f4f7ff;
+  color: var(--text);
+  font-family: "Times New Roman", "Georgia", serif;
+  font-size: 10.7pt;
+  line-height: 1.29;
+  margin: 0;
+  padding: 0;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+main {
+  max-width: 186mm;
+  margin: 0 auto;
+  padding: 3.2mm 2.2mm 3.6mm 2.2mm;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--heading);
+  line-height: 1.2;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h1 {
+  font-size: 18pt;
+  margin: 0 0 2.1mm 0;
+  letter-spacing: 0.01em;
+}
+
+h2 {
+  font-size: 13.2pt;
+  margin: 3.2mm 0 1.45mm 0;
+  border-bottom: 0.52mm solid var(--line);
+  padding-bottom: 0.85mm;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-variant: small-caps;
+}
+
+h3 {
+  font-size: 11.6pt;
+  margin: 2.1mm 0 1.1mm 0;
+  color: #12377c;
+  font-weight: 700;
+}
+
+p,
+li,
+td,
+th {
+  orphans: 2;
+  widows: 2;
+}
+
+p {
+  margin: 0 0 1.18mm 0;
+}
+
+ul,
+ol {
+  margin: 0 0 1.42mm 2.8mm;
+  padding-left: 3.6mm;
+}
+
+li {
+  margin-bottom: 0.58mm;
+  padding-left: 0.12mm;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0.45mm;
+  margin-bottom: 0.72mm;
+  padding-left: 3.1mm;
+}
+
+li > strong:first-child {
+  color: #102f69;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.65mm 0 1.9mm 0;
+  font-size: 8.95pt;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+th,
+td {
+  border: 0.25mm solid var(--line);
+  padding: 1.02mm 1.35mm;
+  vertical-align: top;
+}
+
+th {
+  background: var(--table-head);
+  font-weight: 700;
+}
+
+tr:nth-child(even) td {
+  background: #f9fbff;
+}
+
+img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  max-height: 80mm;
+  margin: 1.1mm auto 0.32mm auto;
+  border: 0.2mm solid #d7dfef;
+  box-shadow: 0 1mm 2.5mm rgba(16, 30, 68, 0.08);
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+em {
+  color: var(--muted);
+}
+
+pre,
+code {
+  font-family: "Consolas", "Courier New", monospace;
+}
+
+pre {
+  background: var(--accent-bg);
+  border: 0.25mm solid var(--line);
+  border-radius: 1.5mm;
+  padding: 1.7mm;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 8.35pt;
+}
+
+blockquote {
+  margin: 2.4mm 0;
+  padding: 2mm 3mm;
+  border-left: 1.1mm solid #9eb2df;
+  background: #f6f9ff;
+  color: var(--muted);
+}
+
+hr {
+  border: 0;
+  border-top: 0.3mm solid var(--line);
+  margin: 4mm 0;
+}
+
+.caption {
+  text-align: center;
+  font-size: 8.6pt;
+  color: var(--muted);
+  margin-top: 0.1mm;
+  margin-bottom: 1.05mm;
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+.mermaid {
+  background: #ffffff;
+  border: 0.25mm solid #d7dfef;
+  border-radius: 1mm;
+  padding: 1.3mm;
+  margin: 1.2mm 0 1.0mm 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.compact p,
+.compact li {
+  margin-bottom: 0.72mm;
+}
+
+.pipeline-page {
+  page-break-before: auto;
+  break-before: auto;
+  page-break-after: auto;
+  break-after: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.3mm;
+  padding-top: 10mm;
+}
+
+.pipeline-page h3 {
+  margin: 0 0 0.6mm 0;
+  font-size: 12.4pt;
+  text-align: center;
+  color: #0f2d66;
+}
+
+.pipeline-page .mermaid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 1.1mm;
+  border: 0.22mm solid #cfd9ee;
+  box-shadow: 0 1.2mm 2.6mm rgba(18, 39, 88, 0.1);
+  min-height: 258mm;
+}
+
+.pipeline-page .mermaid svg {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 258mm;
+  display: block;
+  margin: 0 auto;
+}
+
+.pipeline-page img.pipeline-figure {
+  width: 100%;
+  max-width: 100%;
+  max-height: 258mm;
+  height: auto;
+  object-fit: contain;
+  border: 0.22mm solid #cfd9ee;
+  box-shadow: 0 1.2mm 2.6mm rgba(18, 39, 88, 0.1);
+  margin: 0;
+}
+
+.pipeline-page .caption {
+  margin-top: 0.35mm;
+  margin-bottom: 0;
+}

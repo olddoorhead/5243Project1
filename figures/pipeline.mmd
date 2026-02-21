@@ -1,0 +1,54 @@
+%%{init: {
+  'theme': 'base',
+  'themeCSS': '.cluster-label span p{background-color:#fcfdff !important;padding:0 10px !important;border-radius:4px !important;line-height:1.15;font-size:20px !important;font-weight:600;} .cluster-label foreignObject{overflow:visible !important;}',
+  'themeVariables': {
+    'fontSize': '24px',
+    'fontFamily': 'Times New Roman',
+    'primaryTextColor': '#0f214d',
+    'lineColor': '#2a4f8c',
+    'primaryColor': '#eef4ff',
+    'primaryBorderColor': '#2a4f8c',
+    'tertiaryColor': '#fbfdff',
+    'clusterBkg': '#fcfdff',
+    'clusterBorder': '#a7bcdf'
+  },
+  'flowchart': {
+    'rankSpacing': 54,
+    'nodeSpacing': 58,
+    'wrappingWidth': 260,
+    'diagramPadding': 4,
+    'subGraphTitleMargin': { 'top': 20, 'bottom': 28 },
+    'curve': 'basis'
+  }
+}}%%
+flowchart TB
+
+    subgraph L1["Layer A<br/>Data Intake"]
+        direction LR
+        A1["Load application<br/>tables"] --> A2["Load relational<br/>history tables"] --> A3["Aggregate to<br/>customer key"] --> A4["Join unified<br/>feature matrix"]
+    end
+
+    subgraph L2["Layer B<br/>Split and Quality"]
+        direction LR
+        B1["Remove IDs and<br/>leakage fields"] --> B2["Stratified split:<br/>train and validation"] --> B3["Audit missingness,<br/>duplicates, and keys"] --> B4["Handle sentinels<br/>and drift flags"]
+    end
+
+    subgraph L3["Layer C<br/>Feature Prep"]
+        direction LR
+        C1["Add missingness<br/>indicator features"] --> C2["Grouped numeric and<br/>categorical imputation"] --> C3["Winsorization with<br/>encoding and scaling"] --> C4["Prune low-info and<br/>high-correlation features"]
+    end
+
+    subgraph L4["Layer D<br/>Balance and Output"]
+        direction LR
+        D1["Apply SMOTENC on<br/>training fold only"] --> D2["Build final train/<br/>validation/test matrices"] --> D3["Export datasets<br/>and audit logs"]
+    end
+
+    L1 --> L2 --> L3 --> L4
+
+    classDef step fill:#eef4ff,stroke:#2a4f8c,stroke-width:1.6px,color:#0f214d,font-size:22px,padding:22px;
+    class A1,A2,A3,A4,B1,B2,B3,B4,C1,C2,C3,C4,D1,D2,D3 step;
+
+    style L1 fill:#fbfdff,stroke:#a7bcdf,stroke-width:1.15px
+    style L2 fill:#fbfdff,stroke:#a7bcdf,stroke-width:1.15px
+    style L3 fill:#fbfdff,stroke:#a7bcdf,stroke-width:1.15px
+    style L4 fill:#fbfdff,stroke:#a7bcdf,stroke-width:1.15px
